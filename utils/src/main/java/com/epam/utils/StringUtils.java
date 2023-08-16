@@ -3,16 +3,13 @@ package com.epam.utils;
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
         try{
-            if(!str.equals("")){
-                String substr=str.split("\\.")[0];
-//                if (Integer.parseInt(substr)==0) return false;
-                return org.apache.commons.lang3.StringUtils.isNumeric(substr);
-            }
+                double numb = Double.parseDouble(str);
+                if(numb<=0) return false;
+        }
+        catch(Exception e){
             return false;
         }
-       catch (Exception e){
-            return false;
-       }
+        return true;
     }
 
     public static void main(String[] args) {
