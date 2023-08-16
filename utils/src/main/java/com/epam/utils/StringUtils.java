@@ -5,7 +5,7 @@ public class StringUtils {
         try{
             if(!str.equals("")){
                 String substr=str.split("\\.")[0];
-                if (Integer.parseInt(substr)==0) return false;
+//                if (Integer.parseInt(substr)==0) return false;
                 return org.apache.commons.lang3.StringUtils.isNumeric(substr);
             }
             return false;
