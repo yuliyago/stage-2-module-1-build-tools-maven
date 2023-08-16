@@ -2,12 +2,17 @@ package com.epam.utils;
 
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
-        if(!str.equals("")){
-            String substr=str.split("\\.")[0];
-            if (Integer.parseInt(substr)==0) return false;
-            return org.apache.commons.lang3.StringUtils.isNumeric(substr);
+        try{
+            if(!str.equals("")){
+                String substr=str.split("\\.")[0];
+                if (Integer.parseInt(substr)==0) return false;
+                return org.apache.commons.lang3.StringUtils.isNumeric(substr);
+            }
+            return false;
         }
-      return false;
+       catch (Exception e){
+            return false;
+       }
     }
 
     public static void main(String[] args) {
